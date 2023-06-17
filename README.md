@@ -5,7 +5,7 @@ In order to give women more control over their own health and behaviours, Bellab
 In order to better understand how customers use their smart devices, the case study will focus on one Bellabeat product (the Leaf Health Fitness Tracker) and analyse smart device usage data from non-Bellabeat smart devices (Fitbit).
 Bellabeat would have greater growth potential shown by the analytical insights of the consumer data from smart devices that is now available. This data analysis's objective may help consumers better understand their behaviours and make health and wellness decisions.
 
-# **ASK PHASE**
+## **Phase 1:**  **ASK PHASE**
 
 ## **Business Task**
 The issue is that Bellabeat is a small company with the potential to become a larger player in the global smart device market and it is looking to unlock new growth opportunities. Analyzing smart devise fitness data could help unlock new areas for growth and development. I was presented with the business task to identify trends on how consumers use non-Bellabeat smart devices to inform Bellabeat’s marketing strategy.
@@ -14,7 +14,7 @@ The issue is that Bellabeat is a small company with the potential to become a la
 1.) How do consumers of Fitbit products use smart devises to gain insights into new growth opportunities for Bellabeat?
 2.) What growth opportunity exist for Bellabeat based on results?
 
-## **PREPARE PHASE**
+## **Phase 2:** **PREPARE PHASE**
 
 ### **Dataset**
 The data source used for the case study is Fitbit Fitness Tracker Data. This dataset is stored in Kaggle and was made available through Möbius. The dataset contains personal fitness tracker from thirty Fitbit users. The dataset includes information about daily activity, steps, and heart rate that can be used to explore users’ habits.
