@@ -14,19 +14,19 @@ The Research Questions
 1.) How do consumers of Fitbit products use smart devises to gain insights into new growth opportunities for Bellabeat?
 2.) What growth opportunity exist for Bellabeat based on results?
 
-PREPARE PHASE
+## PREPARE PHASE
 
-Dataset
+### Dataset
 The data source used for the case study is Fitbit Fitness Tracker Data. This dataset is stored in Kaggle and was made available through Möbius. The dataset contains personal fitness tracker from thirty Fitbit users. The dataset includes information about daily activity, steps, and heart rate that can be used to explore users’ habits.
 Source: Mobius. April-May 2016. Fitbit Fitness Tracker Data, Version 1. Retrieved July 2022 from https://www.kaggle.com/datasets/arashnic/fitbit?resource=download
 
-Accessibility, Data Integrity, Privacy
-Verifying the metadata reveals that accessibility of the metadata usage is open-source. The author associated to the work reveals no copyright and has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights. You can copy, modify, distribute, and perform the work, even for commercial purposes, all without asking permission.
+### Accessibility, Data Integrity, Privacy
+Verifying the metadata demonstrates that the usage of the metadata is open-source and accessible. By giving up all of his or her rights to the work globally under copyright law, including all related and neighbouring rights, the author connected with the work discloses no copyright and dedicates the work to the public domain. The work may be duplicated, altered, distributed, and performed without prior consent—even for profit.
 
-Information About the Dataset
-Respondents generated this dataset to a distributed survey via Amazon Mechanical Turk between 03.12.2016-05.12.2016. Thirty eligible Fitbit users consented to the submission of personal tracker data, including minute-level output for physical activity, heart rate, and sleep monitoring. The variation between output represents the use of different types of Fitbit trackers and individual tracking behaviors and preferences. The dataset includes information about daily activity, steps, and heart rate that we can use to explore users’ habits.
+### Information About the Dataset
+This dataset was produced by respondents to a distributed survey using Amazon Mechanical Turk between December 3, 2016, and December 5, 2016. Thirty eligible Fitbit users agreed to provide their personal tracker data, which included minute-level output for heart rate, sleep, and physical activity tracking. The differences in the output reflect the use of various Fitbit tracker models as well as individual monitoring habits and preferences. We may utilise the dataset's daily activity, step, and heart rate data to investigate users' routines.
 
-Data Organization, Sorting, Verification
-Data Organization. The Fitabase data folder contains 18 .CSV files that provides quantitative information which includes daily activity, calories, intensities, steps, heartrate, sleep, and weight log. The spreadsheet contains data of each uniquely identified subject in multiple rows based on activity date. The data is considered a long format since there is one observation row per subject where each subject will have data in multiple rows. Each user has a unique ID with multiple rows of data for each tracked by day and time.
+### Data Organization, Sorting, Verification
+Data Organization. The data folder contains 18 .CSV files including quantitative data, such as daily activity, calories, intensities, steps, heartrate, sleep, and weight log. Based on activity date, the spreadsheet includes data for each subject with a unique identification number in numerous rows. Since there is one observation row for each subject and each subject will have data in numerous rows, the data is seen as having a lengthy format. Each user has a distinct ID, and day and time-tracking data are tracked in numerous rows for each user.
 
-Verification. I first converted the files from .CSV to Excel for ease of data organization because upon opening certain files the spreadsheets indicated that certain .CSV files contained data with over 1.3 million rows. Tables in Apple Numbers application for .CSV files cannot support more than one million rows. Thus, I used Excel to sort the sample and filtered the tables using Pivot Tables. I verified attributes, observations, and relations between each table. I counted the sample size (number of users) and verified the analysis of the length of time as 31 days.
+### Verification. I uploaded all the files to the we based posit cloud tool, created a project space and read all the .csv files as data frame. I checked all the files and found they were okay. Then decided to proceed with only the daily activity, sleep and intesity information for the analytical study and exploratory analysis work. 
