@@ -47,3 +47,24 @@ library(janitor)
 
 ```
 ````
+
+One the libraries are installed and called then I read the csv files as individual data frames and cleaned the column names to using janitor package. All the column names are converted to lower case for easier analysis later on. 
+````
+```
+## Read files: 
+Daily_Activity=read.csv('dailyActivity_merged.csv')
+Daily_Calories=read.csv('dailyCalories_merged.csv')
+Daily_Intensities=read.csv('dailyIntensities_merged.csv')
+Daily_Sleep=read.csv('sleepDay_merged.csv')
+
+## clean and rename column names :
+Daily_Activity<-clean_names(Daily_Activity)
+Daily_Activity<- rename_with(Daily_Activity, tolower)
+
+Daily_Sleep<-clean_names(Daily_Sleep)
+Daily_Sleep<- rename_with(Daily_Sleep, tolower)
+
+Daily_Intensities<-clean_names(Daily_Intensities)
+Daily_Intensities<- rename_with(Daily_Intensities, tolower)
+```
+````
