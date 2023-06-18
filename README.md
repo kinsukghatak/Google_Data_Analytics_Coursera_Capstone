@@ -47,6 +47,7 @@ library(janitor)
 
 ```
 ````
+**### Read data :**
 
 One the libraries are installed and called then I read the csv files as individual data frames and cleaned the column names to using janitor package. All the column names are converted to lower case for easier analysis later on. 
 ````
@@ -66,5 +67,21 @@ Daily_Sleep<- rename_with(Daily_Sleep, tolower)
 
 Daily_Intensities<-clean_names(Daily_Intensities)
 Daily_Intensities<- rename_with(Daily_Intensities, tolower)
+```
+````
+**### Pre process :**
+Once the data files are read and column names are processed; we started diving deep into the data sets. I used the below codes to udnerstand the unique count of customer ids across the various data sets.
+In the next part of the code block, I crosschecked each and every dataset and dropped all the duplicate records. 
+````
+```
+## Let us now count how many unique Ids are there in each of these datasets : 
+n_distinct(Daily_Activity$id)
+n_distinct(Daily_Sleep$id)
+n_distinct(Daily_Intensities$id)
+
+## Drop all the duplicate bservations : 
+Daily_Activity <- Daily_Activity %>% distinct() %>% drop_na()
+Daily_Intensities <- Daily_Intensities %>% distinct() %>% drop_na()
+Daily_Sleep <- Daily_Sleep %>% distinct() %>% drop_na()
 ```
 ````
