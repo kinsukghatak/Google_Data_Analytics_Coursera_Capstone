@@ -35,7 +35,7 @@ I uploaded all the files to the we based posit cloud tool, created a project spa
 
 ## **Phase 3:**  **PROCESSING PHASE**
 
-**### Install packages :**
+### ** Install packages :**
 The below libraries are used for the data processing and analysis.
 ````
 ```
@@ -47,7 +47,7 @@ library(janitor)
 
 ```
 ````
-**### Read data :**
+### **Read data :**
 
 One the libraries are installed and called then I read the csv files as individual data frames and cleaned the column names to using janitor package. All the column names are converted to lower case for easier analysis later on. 
 ````
@@ -69,7 +69,7 @@ Daily_Intensities<-clean_names(Daily_Intensities)
 Daily_Intensities<- rename_with(Daily_Intensities, tolower)
 ```
 ````
-**### Pre process :**
+### **Pre process :**
 Once the data files are read and column names are processed; we started diving deep into the data sets. I used the below codes to udnerstand the unique count of customer ids across the various data sets.
 In the next part of the code block, I crosschecked each and every dataset and dropped all the duplicate records. 
 ````
@@ -83,5 +83,30 @@ n_distinct(Daily_Intensities$id)
 Daily_Activity <- Daily_Activity %>% distinct() %>% drop_na()
 Daily_Intensities <- Daily_Intensities %>% distinct() %>% drop_na()
 Daily_Sleep <- Daily_Sleep %>% distinct() %>% drop_na()
+
+## check if still duplicate records exist 
+sum(duplicated(Daily_Sleep))
+sum(duplicated(Daily_Activity))
+
 ```
 ````
+
+In this phase, I selected few key variables from the different datsets and ran an exploratory distribution analysis using summary statistics on them, just to check how the different variables are distributed. 
+
+````
+```
+##Select few specific variables and perform summary stats analysis on them:
+Daily_Activity %>%
+  select(total_steps, total_distance, sedentary_minutes) %>% summary()
+
+Daily_Sleep %>%
+  select(total_sleep_records, total_minutes_asleep, total_time_in_bed) %>% summary()
+
+Daily_Intensities %>%
+  select(lightly_active_minutes, fairly_active_minutes, very_active_minutes) %>% summary()
+  
+```
+````
+For example, the below snippet is the descriptive analytics result of the Daily_activity data set for total_steps, total_distance and sedentary_minutes variables. 
+![image](https://github.com/kinsukghatak/Google_Data_Analytics_Coursera_Capstone/assets/11865861/83a749cd-4fb9-432b-96a5-3fb05ccca6af)
+
