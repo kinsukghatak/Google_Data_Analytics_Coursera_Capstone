@@ -108,5 +108,6 @@ Daily_Intensities %>%
 ```
 ````
 For example, the below snippet is the descriptive analytics result of the Daily_activity data set for total_steps, total_distance and sedentary_minutes variables. 
+
 ![image](https://github.com/kinsukghatak/Google_Data_Analytics_Coursera_Capstone/assets/11865861/83a749cd-4fb9-432b-96a5-3fb05ccca6af)
 
