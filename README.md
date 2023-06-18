@@ -31,3 +31,19 @@ Data Organization. The data folder contains 18 .CSV files including quantitative
 
 ### **Verification**
 I uploaded all the files to the we based posit cloud tool, created a project space and read all the .csv files as data frame. I checked all the files and found they were okay. Then decided to proceed with only the daily activity, sleep and intesity information for the analytical study and exploratory analysis work. 
+
+
+## **Phase 3:**  **PROCESSING PHASE**
+
+**### Install packages :**
+The below libraries are used for the data processing and analysis.
+````
+```
+library(tidyverse)
+library(here)
+library(skimr)
+library(lubridate)
+library(janitor)
+
+```
+````
