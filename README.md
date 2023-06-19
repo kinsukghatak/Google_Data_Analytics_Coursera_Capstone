@@ -90,6 +90,7 @@ sum(duplicated(Daily_Activity))
 
 ```
 ````
+### **Exploratory Analysis :**
 
 In this phase, I selected few key variables from the different datsets and ran an exploratory distribution analysis using summary statistics on them, just to check how the different variables are distributed. 
 
@@ -110,4 +111,34 @@ Daily_Intensities %>%
 For example, the below snippet is the descriptive analytics result of the Daily_activity data set for total_steps, total_distance and sedentary_minutes variables. 
 
 ![image](https://github.com/kinsukghatak/Google_Data_Analytics_Coursera_Capstone/assets/11865861/83a749cd-4fb9-432b-96a5-3fb05ccca6af)
+
+### **Exploratory visual analysis :**
+In this phase, I have extracted few key variables and have tried to understand their relations with other key variables.For example I staretd with the total steps vs the sedentary minutes analysis from the Daily_activity dataset. As expected they have a negative correlation ; i.e. as the total steps go up the sedentary minutes come down which implies that as people become more active they spend less time sitting idle. the below code uses R's ggplot2 package and draws the wonderful graphs as displayed.
+
+````
+```
+## analysing total steps vs sedentary minutes from the daily activity dataset :
+ggplot(data=Daily_Activity, aes(x=total_steps, y=sedentary_minutes)) + 
+  geom_point() + geom_smooth(method = "lm", se = FALSE) + 
+  labs(x ="total_steps", y = "sedentary_minutes", title = "Daily Activities: Total Steps and Sedentary Minutes")+ 
+  theme_minimal()
+  ```
+````
+
+![image](https://github.com/kinsukghatak/Google_Data_Analytics_Coursera_Capstone/assets/11865861/d9e042b2-d876-44a3-9e0d-ff80e4722069)
+
+
+In a similar analysis, the Daily steps vs the sedendatry minutes were also crosscehcked using a heat map where calories burnt have been used as a marker with colour blue. The code used for this process is provided below. 
+
+````
+```
+ggplot(data=Daily_Activity, aes(x=total_steps, y=sedentary_minutes, color = calories)) + 
+geom_point() + 
+labs(title = "Relationship: Daily Steps & Sedentary Minutes")
+  ```
+````
+![image](https://github.com/kinsukghatak/Google_Data_Analytics_Coursera_Capstone/assets/11865861/bc350e27-eeb7-4870-84d5-9b3c2bf36bb8)
+
+As can be seen from this graph, the more the total steps the dots turn light blue ; i.e. more calories are burnt. Similarly, when the sedentary minutes are high the dots are deep blue, implying lower burn out of calories. This is exactly in line with the business understanding as well.  
+
 
