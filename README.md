@@ -90,7 +90,9 @@ sum(duplicated(Daily_Activity))
 
 ```
 ````
-### **Exploratory Analysis :**
+## **Phase 4:**  **ANALYSIS PHASE**
+
+### **Exploratory Summary Statistics Analysis :**
 
 In this phase, I selected few key variables from the different datsets and ran an exploratory distribution analysis using summary statistics on them, just to check how the different variables are distributed. 
 
@@ -140,5 +142,50 @@ labs(title = "Relationship: Daily Steps & Sedentary Minutes")
 ![image](https://github.com/kinsukghatak/Google_Data_Analytics_Coursera_Capstone/assets/11865861/bc350e27-eeb7-4870-84d5-9b3c2bf36bb8)
 
 As can be seen from this graph, the more the total steps the dots turn light blue ; i.e. more calories are burnt. Similarly, when the sedentary minutes are high the dots are deep blue, implying lower burn out of calories. This is exactly in line with the business understanding as well.  
+
+
+### **Exploratory analysis after merging of datasets:**
+In this phase, I thought of analysing the activity and sleep information together. For this reason, first the Daily_Activity dataset and Daily_sleep dataset were grouped by the customer id and mean of certain key variables were obatined. The code used for this dataset creation is presented below:
+````
+```
+## Group by Activity and Sleep data with customer id and obtain mean of distance, steps, calories burnt  and sleepn mins :
+Activity_unique <- Daily_Activity %>%
+  group_by(id) %>%
+  summarise(mean_steps=mean(total_steps),
+            mean_distance=mean(total_distance),
+            mean_sed_mins=mean(sedentary_minutes),
+            mean_cal=mean(calories)) %>%
+  arrange(desc(mean_cal))
+
+Sleep_unique <- Daily_Sleep %>%
+  group_by(id) %>%
+  summarise(mean_sleep_mins=mean(total_minutes_asleep))%>%
+  arrange(desc(mean_sleep_mins))
+  ```
+````
+
+Following this the two datasets are merged (inner joined) with customer id as the joining key. We wanted to understand how the mean_steps and mean_sleep_mins are related to each other. The below code that we have developed helps in answering this query.
+````
+```
+## Merging activity and intesnity information :
+ActivityandSleep <- merge(Activity_unique, Sleep_unique, by="id", how='inner')
+
+## analysing mean teps vs sleep times from the merged dataset:
+ggplot(data=ActivityandSleep, aes(x=mean_steps, y=mean_sleep_mins)) + 
+  geom_point() + geom_smooth(method = "lm", se = FALSE) + 
+  labs(x ="mean_steps", y = "mean_sleep_mins", title = "Daily Activities: Mean Steps and Sleep times")+ 
+  theme_minimal()
+
+## find out the correlation :
+cor(ActivityandSleep$mean_steps,ActivityandSleep$mean_sleep_mins)
+  ```
+````
+The relationship between these two variables should have a negative correlation and that's true. We obtained a correlation of -0.21 which is in line with the expectation. To add to that, the below graph also showcases that there lies a negatvie relationship between these two variables. 
+
+![image](https://github.com/kinsukghatak/Google_Data_Analytics_Coursera_Capstone/assets/11865861/40ff88ef-5438-450e-8ba4-65fd070e0809)
+
+
+As mean activity times go up the mean sleep time comes down. That implies that active persons spend less time on bed. 
+
 
 
