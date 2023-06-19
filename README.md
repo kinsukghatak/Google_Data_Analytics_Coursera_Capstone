@@ -187,5 +187,9 @@ The relationship between these two variables should have a negative correlation 
 
 As mean activity times go up the mean sleep time comes down. That implies that active persons spend less time on bed. 
 
-
+## **Phase 5:** **ACT PHASE**
+The following recommendations may assist the marketing campaign strategy and improve the Bellabeat app: 
+• Increase teleservices product offerings. Bellabeat can incorporate medical IoT, such as the use of cloud services and connected applications, allowing consumers to control their own health and allowing medical professionals to monitor their patients remotely, reducing the need for in-person visits.
+• Include mental health among the areas you expand. Apps for digital therapy, mindfulness, meditation, and self-care for mental health. Bellabeat has software and scheduling tools that enable teletherapy to be applied more widely.
+• Reaching a larger audience. Men's Bellabeat items should be included. The use of smart devices by men and women in comparison can then be studied in the future.
 
